@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <!-- Normalize.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <!-- Input CSS link-->
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/wow/css/libs/animate.css">
+    <link rel="stylesheet" href="bower_components/raty/lib/jquery.raty.css">
+
+    <!-- Include Required Prerequisites -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap/3/css/bootstrap.css" />
+    <!-- Include Date Range Picker -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+    <!--    
+                使用以下CSS套件
+                font-awesome.css
+                bootstrap.css
+                animate.css (with wow)
+                jquery.raty.css
+    -->
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- please remember the order-->
+
+    <!--    Input Javascript-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="bower_components/wow/dist/wow.min.js"></script>
+    <script src="bower_components/raty/lib/jquery.raty.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+    <!-- Include Required Prerequisites -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <!-- Include Date Range Picker -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+
+    <!-- 
+                使用以下JS套件
+                jquery.js
+                wow.js
+                jqeury.raty.js
+                bootstrap.js
+                jquery.easing.js
+    -->
+    <script src="js/main.js">
+        //放你所寫的javascript檔案
+    </script>
+    <!--    使用Google map API-->
+    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <!--    Please remember the order-->
+    <title>Adventure-2</title>
+</head>
+<!-- Scrollspy -->
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <!--導覽列開始-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- 導覽列 RWD選單圖示與品牌連結 -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">觸發縮放</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+                <a class="navbar-brand" href="#">Adventure</a>
+            </div>
+            <!-- 小螢幕時要被收起的元素 放置於 navbar-collapse -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!-- 拉到右邊的導覽列清單 -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#recommendSection">Recommend</a></li>
+                    <li><a href="#exploreSection">Explore</a></li>
+                    <li><a href="#">Sign in</a></li>
+                    <li><a href="#">Register</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!--導覽列結束-->
+
+
+
+    <!--固定寬度大型看板開始-->
+    <header id="header" class="jumbotron">
+        <div class="container">
+            <div class="jumbotron-content">
+                <h1>What's your next Adventure?</h1>
+                <p></p>
+                <a class="btn btn-success btn-lg" href="#">Start Explore</a>
+            </div>
+        </div>
+    </header>
+    <!--固定寬度大型看板結尾-->
+
+    <!-- SearchSection Start-->
+    <section id="searchSection">
+        <div class="container">
+            <div class="row">
+                <!-- 修正成三塊並排，每塊的大小為兩格網格且對齊置中 -->
+                <div class="col-sm-2 col-sm-offset-3">
+                    <div class="dropdown">
+                        <button class="btn btn-default btn-lg btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Activity
+    <span class="caret"></span>
+  </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">Camping</a></li>
+                            <li><a href="#">Hiking</a></li>
+                            <li><a href="#">Surfing</a></li>
+                            <li><a href="#">Kayak</a></li>
+                            <li><a href="#">History City Tour</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" name="daterange" value="01/01/2015 - 01/31/2015" />
+                    <script type="text/javascript">
+                        $(function() {
+                            $('input[name="daterange"]').daterangepicker();
+                        });
+                    </script>
+
+                    <!--
+  <div class="dropdown">
+     <button class="btn btn-default btn-lg btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <span class="caret"></span>
+  </button></div>
+        -->
+
+                </div>
+                <div class="col-md-2">
+                    <div class="dropdown">
+                        <button class="btn btn-default btn-lg btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Person
+    <span class="caret"></span>
+  </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="#">1 Adult, 0 Child</a></li>
+                            <li><a href="#">2 Adult, 1 Child</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SearchSection End-->
+
+    <!-- RecommendSection Start-->
+    <section class="row" id="recommendSection">
+        <h1 class="section-title">We recommend for you</h1>
+        <div class="row">
+            <div class="col-sm-2 col-sm-offset-3">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=156" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quo ratione, ducimus illum culpa. Nulla?</p>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=25" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam a assumenda eos aliquam similique.</p>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=337" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, suscipit tempore animi eos nobis enim.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2 col-sm-offset-3">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=18" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quo ratione, ducimus illum culpa. Nulla?</p>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=19" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam a assumenda eos aliquam similique.</p>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=37" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, suscipit tempore animi eos nobis enim.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- RecommendSection End-->
+
+    <!-- ExploreSection Start-->
+    <section class="row" id="exploreSection">
+        <h1 class="section-title">These all near by you</h1>
+        <div class="row">
+            <div class="col-sm-2 col-sm-offset-3">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=12" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quo ratione, ducimus illum culpa. Nulla?</p>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=165" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam a assumenda eos aliquam similique.</p>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=33" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, suscipit tempore animi eos nobis enim.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2 col-sm-offset-3">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=71" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam quo ratione, ducimus illum culpa. Nulla?</p>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=289" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et ipsam a assumenda eos aliquam similique.</p>
+                </a>
+            </div>
+            <div class="col-sm-2">
+                <a href="" class="thumbnail"><img src="https://unsplash.it/600/600?image=182" alt="">
+                    <h3>Lorem ipsum.</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, suscipit tempore animi eos nobis enim.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ExploreSection End-->
+    <!--Footer Start-->
+    <footer id="footer">
+        <div class="row">
+            <div class="col-sm-5 col-sm-offset-1">
+                <h1 class="section-sub-title">Contect Us</h1>
+                <h4>
+                    <a href="" class="email"></a>
+                </h4>
+                <p class="address">Republika Hrvatska, Kandlerova ul. 39, 52100, Pula, Croatia</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa fa-2x fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-2x fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-2x fa-linkedin" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <div class="footer-bar">
+            <div class="container">
+                <ul>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Join us</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Policy</a></li>
+                </ul>
+                <p class="copy-right">&copy; 2017 Brand
+                    <p>
+            </div>
+        </div>
+
+    </footer>
+    <!--    Footer End-->
+</body>
+
+</html>
